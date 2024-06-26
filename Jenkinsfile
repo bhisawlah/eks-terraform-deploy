@@ -4,7 +4,7 @@ pipeline {
                 choice(name: 'deploy_choice', choices:['apply','destroy'],description:'The deployment type')
                   }
     environment {
-        EMAIL_TO = 'fusisoft@gmail.com'
+        EMAIL_TO = 'ajisegbedeabisolat@gmail.com'
     }
     stages {
         stage('1.Terraform init') {
@@ -45,7 +45,7 @@ pipeline {
                Let me know if the changes look okay.
                Thanks,
                Dominion System Technologies,
-              +1 (313) 413-1477''', cc: 'fusisoft@gmail.com', from: '', replyTo: '', subject: 'Terraform Infra deployment completed!!!', to: 'fusisoft@gmail.com'
+              +1 (313) 413-1477''', cc: 'ajisegbedeabisolat@gmail.com', from: '', replyTo: '', subject: 'Terraform Infra deployment completed!!!', to: 'fusisoft@gmail.com'
                           
                }    
           }
