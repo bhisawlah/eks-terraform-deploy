@@ -3,7 +3,7 @@ terraform {
   backend "s3" {
     key            = "infra/terraform.tfstate"
     bucket         = "bhisawlah-terraform-backend-bucket"
-    region         = "us-west-2"
+    region         = "us-east-2"
     dynamodb_table = "terraform-state-locking"
   }
 }
