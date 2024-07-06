@@ -39,44 +39,44 @@ resource "kubernetes_service_account" "service-account" {
 # Install Load Balancer Controler With Helm
 ################################################################################
 
-resource "helm_release" "lb" {
-  name       = "aws-load-balancer-controller"
-  repository = "https://aws.github.io/eks-charts"
-  chart      = "aws-load-balancer-controller"
-  namespace  = "kube-system"
-  timeout    = "10m"
-  depends_on = [
-    kubernetes_service_account.service-account
-  ]
+# resource "helm_release" "lb" {
+#   name       = "aws-load-balancer-controller"
+#   repository = "https://aws.github.io/eks-charts"
+#   chart      = "aws-load-balancer-controller"
+#   namespace  = "kube-system"
+#   timeout    = 10
+#   depends_on = [
+#     kubernetes_service_account.service-account
+#   ]
 
-  set {
-    name  = "region"
-    value = var.main-region
-  }
+#   set {
+#     name  = "region"
+#     value = var.main-region
+#   }
 
-  set {
-    name  = "vpcId"
-    value = var.vpc_id
-  }
+#   set {
+#     name  = "vpcId"
+#     value = var.vpc_id
+#   }
 
-  set {
-    name  = "image.repository"
-    value = "339712774185.dkr.ecr.${var.main-region}.amazonaws.com/amazon/aws-load-balancer-controller"
-  }
+#   set {
+#     name  = "image.repository"
+#     value = "339712774185.dkr.ecr.${var.main-region}.amazonaws.com/amazon/aws-load-balancer-controller"
+#   }
 
-  set {
-    name  = "serviceAccount.create"
-    value = "false"
-  }
+#   set {
+#     name  = "serviceAccount.create"
+#     value = "false"
+#   }
 
-  set {
-    name  = "serviceAccount.name"
-    value = "aws-load-balancer-controller"
-  }
+#   set {
+#     name  = "serviceAccount.name"
+#     value = "aws-load-balancer-controller"
+#   }
 
-  set {
-    name  = "clusterName"
-    value = var.cluster_name
-  }
-}
+#   set {
+#     name  = "clusterName"
+#     value = var.cluster_name
+#   }
+# }
 
