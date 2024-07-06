@@ -36,7 +36,7 @@ module "eks" {
 
   # EKS Managed Node Group(s)
   eks_managed_node_group_defaults = {
-    instance_types = ["m5.xlarge", "m5.large", "t3.medium"]
+    instance_types = ["t2.medium", "t2.medium", "t2.medium"]
     iam_role_additional_policies = {
       AmazonEBSCSIDriverPolicy = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
     }
@@ -53,7 +53,7 @@ module "eks" {
       max_size     = 10
       desired_size = 3
 
-      instance_types = ["t3.large"]
+      instance_types = ["t3.medium"]
       capacity_type  = "SPOT"
     }
   }
@@ -62,13 +62,13 @@ module "eks" {
   manage_aws_auth_configmap = true
   #create_aws_auth_configmap = true
 
-  aws_auth_roles = [
-    {
-      rolearn  = var.rolearn
-      username = "fusi"
-      groups   = ["system:masters"]
-    },
-  ]
+  # aws_auth_roles = [
+  #   {
+  #     rolearn  = var.rolearn
+  #     username = "Bisola"
+  #     groups   = ["system:masters"]
+  #   },
+  # ]
 
   tags = {
     env       = "dev"
