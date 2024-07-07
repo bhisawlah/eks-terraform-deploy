@@ -62,13 +62,13 @@ module "eks" {
   manage_aws_auth_configmap = true
   create_aws_auth_configmap = true
 
-  aws_auth_roles = [
-    {
-      rolearn  = var.rolearn
-      username = "Bisola"
-      groups   = ["system:masters"]
-    },
-  ]
+  # aws_auth_roles = [
+  #   {
+  #     rolearn  = var.rolearn
+  #     username = "Bisola"
+  #     groups   = ["system:masters"]
+  #   },
+  # ]
 
   tags = {
     env       = "dev"
