@@ -27,5 +27,6 @@ variable "private_subnets" {
 variable "rolearn" {
   description = "Add admin role to the aws-auth configmap"
   type = string
+  default = "arn:aws:iam::339712774185:role/kops"
 }
 
