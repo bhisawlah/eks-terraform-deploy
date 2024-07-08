@@ -66,7 +66,7 @@ module "eks" {
     {
       rolearn  = var.rolearn
       username = "Bisola"
-      groups   = ["system:masters"]
+      groups   = ["system:manager"]
     },
   ]
 
