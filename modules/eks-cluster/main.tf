@@ -76,49 +76,49 @@ module "eks" {
   }
 }
 
-#creating namespaces
-resource "kubernetes_namespace" "gateway" {
-  metadata {
-    annotations = {
-      name = "gateway"
-    }
+# #creating namespaces
+# resource "kubernetes_namespace" "gateway" {
+#   metadata {
+#     annotations = {
+#       name = "gateway"
+#     }
 
-    labels = {
-      app = "webapp"
-    }
+#     labels = {
+#       app = "webapp"
+#     }
 
-    name = "gateway"
-  }
-}
-
-
-resource "kubernetes_namespace" "directory" {
-  metadata {
-    annotations = {
-      name = "directory"
-    }
-
-    labels = {
-      app = "webapp"
-    }
-
-    name = "directory"
-  }
-}
+#     name = "gateway"
+#   }
+# }
 
 
+# resource "kubernetes_namespace" "directory" {
+#   metadata {
+#     annotations = {
+#       name = "directory"
+#     }
 
-resource "kubernetes_namespace" "analytics" {
-  metadata {
-    annotations = {
-      name = "analytics"
-    }
+#     labels = {
+#       app = "webapp"
+#     }
 
-    labels = {
-      app = "webapp"
-    }
+#     name = "directory"
+#   }
+# }
 
-    name = "analytics"
-  }
-}
+
+
+# resource "kubernetes_namespace" "analytics" {
+#   metadata {
+#     annotations = {
+#       name = "analytics"
+#     }
+
+#     labels = {
+#       app = "webapp"
+#     }
+
+#     name = "analytics"
+#   }
+# }
 
