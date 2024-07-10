@@ -4,6 +4,6 @@ terraform {
     key            = "infra/terraform.tfstate"
     bucket         = "terraform-lock-tableterraform"
     region         = "us-west-1"
-    dynamodb_table = "terraform-state-locking"
+    dynamodb_table = "terraform-lock-table"
   }
 }
