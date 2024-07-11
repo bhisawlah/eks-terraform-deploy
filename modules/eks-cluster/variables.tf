@@ -13,6 +13,7 @@ variable "cluster_name" {
 variable "vpc_id" {
   description = "VPC ID which EKS cluster is deployed in"
   type        = string
+  default = "vpc-028dc4ae499efec21"
 }
 
 variable "private_subnets" {
